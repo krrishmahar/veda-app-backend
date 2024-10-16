@@ -12,6 +12,7 @@ public class HallService {
 
     private HallRepo hallRepo;
 
+
     @Autowired
     public HallService(HallRepo hallRepo) {
         this.hallRepo = hallRepo;
@@ -32,7 +33,7 @@ public class HallService {
     public BanquetHall updateHall(int id, BanquetHall updatedHall) {
         BanquetHall existingHall = hallRepo.findById(id).orElse(null);
         if (existingHall != null) {
-            existingHall.setHallName(updatedHall.getHallName());
+            existingHall.setName(updatedHall.getName());
             existingHall.setPrice(updatedHall.getPrice());
             existingHall.setHallCapacity(updatedHall.getHallCapacity());
             existingHall.setImageUrl(updatedHall.getImageUrl());

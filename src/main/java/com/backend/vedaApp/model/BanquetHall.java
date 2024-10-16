@@ -18,7 +18,7 @@ public class BanquetHall {
     private int id;
 
     @Column(name = "hall_name")
-    private String hallName;
+    private String name;
     private BigDecimal price;
 
     @Column(name = "hall_capacity")

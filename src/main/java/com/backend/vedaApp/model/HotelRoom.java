@@ -18,7 +18,7 @@ public class HotelRoom {
     private int id;
 
     @Column(name = "room_name")
-    private String roomName;
+    private String name;
     private BigDecimal price;
 
     @Column(name = "room_capacity")

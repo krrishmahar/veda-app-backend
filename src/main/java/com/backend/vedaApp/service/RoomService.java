@@ -32,7 +32,7 @@ public class RoomService {
     public HotelRoom updateRoom(int id, HotelRoom updatedRoom) {
         HotelRoom existingRoom = roomRepo.findById(id).orElse(null);
         if (existingRoom != null) {
-            existingRoom.setRoomName(updatedRoom.getRoomName());
+            existingRoom.setName(updatedRoom.getName());
             existingRoom.setPrice(updatedRoom.getPrice());
             existingRoom.setRoomCapacity(updatedRoom.getRoomCapacity());
             existingRoom.setBeds(updatedRoom.getBeds());
