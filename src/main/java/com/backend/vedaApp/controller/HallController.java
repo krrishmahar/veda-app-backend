@@ -43,14 +43,14 @@ public class HallController {
         }
     }
 
-    @PutMapping("/hall/{id}")
-    public ResponseEntity<BanquetHall> updateHall(@PathVariable int id, @RequestBody BanquetHall updatedHall) {
-        BanquetHall hall = hallService.updateHall(id, updatedHall);
-        if (hall != null) {
-            return new ResponseEntity<>(hall, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
+//    @PutMapping("/hall/{id}")
+//    public ResponseEntity<BanquetHall> updateHall(@PathVariable int id, @RequestBody BanquetHall updatedHall) {
+//        BanquetHall hall = hallService.updateHall(id, updatedHall);
+//        if (hall != null) {
+//            return new ResponseEntity<>(hall, HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//    }
 
     @DeleteMapping("/hall/{id}")
     public ResponseEntity<String> deleteHall(@PathVariable int id) {

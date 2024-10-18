@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class RoomService {
 
-    private RoomRepo roomRepo;
+    private final RoomRepo roomRepo;
 
     @Autowired
     public RoomService(RoomRepo roomRepo) {
@@ -29,24 +29,6 @@ public class RoomService {
         return roomRepo.save(hotelRoom);
     }
 
-    public HotelRoom updateRoom(int id, HotelRoom updatedRoom) {
-        HotelRoom existingRoom = roomRepo.findById(id).orElse(null);
-        if (existingRoom != null) {
-            existingRoom.setName(updatedRoom.getName());
-            existingRoom.setPrice(updatedRoom.getPrice());
-            existingRoom.setRoomCapacity(updatedRoom.getRoomCapacity());
-            existingRoom.setBeds(updatedRoom.getBeds());
-            existingRoom.setImageUrl(updatedRoom.getImageUrl());
-            existingRoom.setAvailability(updatedRoom.isAvailability());
-            existingRoom.setWifi(updatedRoom.isWifi());
-            existingRoom.setBath(updatedRoom.isBath());
-            existingRoom.setTv(updatedRoom.isTv());
-            existingRoom.setDrinks(updatedRoom.isDrinks());
-            existingRoom.setFood(updatedRoom.isFood());
-            return roomRepo.save(existingRoom);
-        }
-        return null;
-    }
 
     public void deleteRoom(int id) {
         roomRepo.deleteById(id);
