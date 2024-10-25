@@ -1,9 +1,9 @@
 package com.backend.vedaApp.repo;
 
-import com.backend.vedaApp.model.BanquetHall;
+import com.backend.vedaApp.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface HallRepo extends JpaRepository<BanquetHall, Integer> {
+public interface CustomerRepo extends JpaRepository<Customer, Integer> {
 }

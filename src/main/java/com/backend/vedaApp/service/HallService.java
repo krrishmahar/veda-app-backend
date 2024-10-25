@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class HallService {
 
-    private HallRepo hallRepo;
+    private final HallRepo hallRepo;
 
 
     @Autowired
@@ -30,20 +30,6 @@ public class HallService {
         return hallRepo.save(banquetHall);
     }
 
-    public BanquetHall updateHall(int id, BanquetHall updatedHall) {
-        BanquetHall existingHall = hallRepo.findById(id).orElse(null);
-        if (existingHall != null) {
-            existingHall.setName(updatedHall.getName());
-            existingHall.setPrice(updatedHall.getPrice());
-            existingHall.setHallCapacity(updatedHall.getHallCapacity());
-            existingHall.setImageUrl(updatedHall.getImageUrl());
-            existingHall.setAvailability(updatedHall.isAvailability());
-            existingHall.setWifi(updatedHall.isWifi());
-            existingHall.setFood(updatedHall.isFood());
-            return hallRepo.save(existingHall);
-        }
-        return null;
-    }
 
     public void deleteHall(int id) {
         hallRepo.deleteById(id);

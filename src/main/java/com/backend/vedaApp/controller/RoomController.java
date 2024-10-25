@@ -42,15 +42,15 @@ public class RoomController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-    @PutMapping("/room/{id}")
-    public ResponseEntity<HotelRoom> updateRoom(@PathVariable int id, @RequestBody HotelRoom updatedRoom) {
-        HotelRoom room = roomService.updateRoom(id, updatedRoom);
-        if (room != null) {
-            return new ResponseEntity<>(room, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
+//
+//    @PutMapping("/room/{id}")
+//    public ResponseEntity<HotelRoom> updateRoom(@PathVariable int id, @RequestBody HotelRoom updatedRoom) {
+//        HotelRoom room = roomService.updateRoom(id, updatedRoom);
+//        if (room != null) {
+//            return new ResponseEntity<>(room, HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//    }
 
     @DeleteMapping("/room/{id}")
     public ResponseEntity<String> deleteRoom(@PathVariable int id) {
