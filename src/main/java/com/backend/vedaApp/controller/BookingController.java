@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequestMapping("/api")
-public class BookingController {
+public class    BookingController {
 
     private final BookingService bookingService;
 
